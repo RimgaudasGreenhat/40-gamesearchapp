@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+.text-gradient {
+    @apply bg-linear-to-r from-[#2cfc03] via-[#03fc90] to-[#037bfc] bg-clip-text text-transparent;
+}
+
+
+
