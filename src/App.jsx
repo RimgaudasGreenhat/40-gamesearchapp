@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import useFetch from "./hooks/useFetch.js";
 import { fetchGames } from "./api.js";
 import GameCard from "./components/GameCard.jsx";
+import ErrorMessage from "./components/ErrorMessage.jsx";
+import Spinner from "./components/Spinner.jsx";
 
 export default function App()
 {
@@ -40,8 +42,9 @@ export default function App()
           onChange= {(e) => setSearchQuery(e.target.value)}
           />
           <div className="w-full">
-            {data && (
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2
+            {!loading? (
+              <>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2
               lg:grid-cols-3">
                 {data.results.map(
                 (game) => 
@@ -49,18 +52,27 @@ export default function App()
                     <GameCard
                     key={game.slug}
                     name={game.name}
-                    coverLink={game.backround_image}
+                    coverLink={game.background_image}
                     playtime={game.playtime}
                     genres={game.genres}
                     onClick={() => {
-                      console.log("test");
-                      
+                      console.log("test"); 
                     }}
                     />
                   )
                 )}
-            </div>
+              </div>
+              {data?.results.length === 0 && (
+              <ErrorMessage message={"No games were found sadge :("} />
             )}
+            </>  
+            ) : (
+             <div className="flex justify-center">
+              <Spinner />
+             </div> 
+            )}
+            {error && <ErrorMessage message={"Network Error Occured!"} />}
+          
         </div>
     </div> 
     </main>
@@ -68,4 +80,4 @@ export default function App()
 }
 
 
-//pratest nuo 1:08:27 :)
+//pratest nuo 1:25:18 :)
