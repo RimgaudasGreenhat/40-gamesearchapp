@@ -8,4 +8,10 @@
     @apply bg-red-800 rounded-full px-2 text-gray-300 text-sm;
 }
 
+.main-button {
+    @apply bg-blue-400 rounded-md p-2;
+}
 
+.platform-pill {
+    @apply bg-blue-800 rounded-full px-2 text-gray-300 text-sm;
+}
