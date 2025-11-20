@@ -13,7 +13,7 @@ function GameCard({
             className="w-full h-40 object-cover rounded-md"
             />
 
-            <h1 className="p-2 text-gray-300 text-lg">{name}</h1>
+            <h1 className="cursor-pointer p-2 text-gray-300 text-lg">{name}</h1>
             {playtime !== 0 && (
                 <div className="flex items-center gap-2 mx-2 bg-gray-800 p-2 absolute top-2 right-0 rounded-md">
                     <img

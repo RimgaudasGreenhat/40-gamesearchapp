@@ -48,7 +48,7 @@ export default function GameDetails({ currentGame, goBack }) {
 
   return (
     <section>
-      <button className="main-button flex" onClick={goBack}>
+      <button className="cursor-pointer main-button flex" onClick={goBack}>
         <img src="./back-arrow.svg" /> <span className="mx-2">Go Back</span>
       </button>
 
@@ -108,7 +108,7 @@ export default function GameDetails({ currentGame, goBack }) {
               </div>
               <div className="flex justify-center items-center">
                 <button
-                  className="main-button flex items-center"
+                  className="cursor-pointer main-button flex items-center"
                   onClick={() =>
                     window.open(
                       `https://google.com/search?q=where+to+buy+${currentGame.name}`,

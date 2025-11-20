@@ -17,7 +17,7 @@ export default function ScreenshotCarousel({ screenshots }) {
       key={screenshots[currentScreenshotIndex].id}
     >
       <img
-        className="bg-gray-200 rounded-full p-4 absolute top-40 right-5 shadow-gray-700 shadow-xl z-10"
+        className="cursor-pointer bg-gray-200 rounded-full p-4 absolute top-40 right-5 shadow-gray-700 shadow-xl z-10"
         onClick={() => {
           setCurrentScreenshotIndex((currentScreenshotIndex) => {
             if (currentScreenshotIndex < screenshots.length - 1) {
@@ -30,7 +30,7 @@ export default function ScreenshotCarousel({ screenshots }) {
         src="./arrow-right.svg"
       />
       <img
-        className="bg-gray-200 rounded-full p-4 absolute top-40 left-5 shadow-gray-700 shadow-xl z-10"
+        className="cursor-pointer bg-gray-200 rounded-full p-4 absolute top-40 left-5 shadow-gray-700 shadow-xl z-10"
         onClick={() => {
           setCurrentScreenshotIndex((currentScreenshotIndex) => {
             if (currentScreenshotIndex > 0) {
